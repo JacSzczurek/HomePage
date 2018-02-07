@@ -1,0 +1,327 @@
+﻿@model Contact
+@await Component.InvokeAsync("NToastNotify.Toastr")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> <!-- ENCODING -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Omnifood is a premium food delivery service with the mission to bring affordable and healthy meals to as many people as possible."> <!-- SEO -->
+
+    <link rel="stylesheet" type="text/css" href="/vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,300italic" rel="stylesheet" type="text/css">
+
+    <title>Jac.Szczurek</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="row">
+                <ul class="main-nav js--main-nav clearfix">
+                    <li>
+                        <a href="#about">
+                            O mnie
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#technology">
+                            Technologie
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#experience">
+                            Doświadczenie
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            Kontakt
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="top-about-me">
+            <h1>O Mnie</h1>
+            <p>Mam na imię Jacek, pochodzę z Wrocławia <br /> Jestem programistą .NET, uwielbiam podejmować nowe wyzwania</p>
+            <a class="btn btn-full js--scroll-to-contact" href="#">Potrzebuje strony!</a>
+            <a class="btn btn-ghost js--scroll-to-about" href="#">Dowiedz się więcej!</a>
+        </div>
+    </header>
+    <section class="section-main-about-me js--section-about" id="about">
+        <div class="row">
+            <div class="col span-1-of-2">
+                @*<img src="/images/person-example-2.jpg" alt="person-example" class="js--animation-wp-4" />*@
+                <div style="margin: 10px auto; width:100%;"><div class="circle">3 Lata</div></div>
+                <h3>1095 dni</h3>
+                <div class="about-me-time">26280 godzin</div>
+                <div class="about-me-time">1576800 minut</div>
+                <div class="about-me-time">9460800 sekund</div>
+
+            </div>
+            <div class="col span-1-of-2">
+                <h2>O Mnie</h2>
+                <p>
+                    Madison is aw director of brand marketing, with experience managing global teams and multi-million dollar campaigns. Her background in brand strategy, visual design, and account management inform her mindful but competitive approach.<br /><br />
+
+                    Madison is fueled by her passion for understanding the nuances of cross-cultural advertising. She considers herself a ‘forever student,’ eager to both build on her academic foundations in psychology and sociology, and stay in tune with the latest digital marketing strategies through continued coursework.<br /><br />
+
+                    Her hunger for knowledge and determination to turn information into action has contributed to her most recent success at Rockwell Group, where she led international, award-winning campaigns for heavy-hitting brands such as Puma, Gucci, and Rolex.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section-technology js--section-technology" id="technology">
+        <div class="row">
+            <h2>Technologie</h2>
+        </div>
+        <div class="row technology-photos">
+            <ul class="technology-photo-list">
+                <li>
+                    <img src="/images/technologies/cLogo.png" alt="c# Logo" class="js--animation-wp-1"/>
+                    <div class="rating">
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/technologies/mvc_05.png" alt="c# Logo"/>
+                    <div class="rating">
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/technologies/htmlcssJs.png" alt="c# Logo"/>
+                    <div class="rating">
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/technologies/sql.png" alt="c# Logo" />
+                    <div class="rating">
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="technology-photo-list">
+                <li>
+                    <img src="/images/technologies/rwd.jpg" alt="c# Logo" />
+                    <div class="rating">
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/technologies/EF.jpg" alt="c# Logo" />
+                    <div class="rating">
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/technologies/github.png" alt="c# Logo" />
+                    <div class="rating">
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/technologies/angularJS.png" alt="c# Logo" />
+                    <div class="rating">
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star full-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                        <span class="rating-star empty-star"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+<section class="section-experience" id="experience">
+    <div class="row">
+        <h2>
+            Doświadczenie
+        </h2>
+    </div>
+    <div class="row">
+        <div class="col span-1-of-3">
+            <div class="experience-box js--animation-wp-4">
+                <h3>Travelplanet.pl</h3>
+                <h4>Web developer</h4><br />
+                <h5>od 09-2017</h5>
+                <p>
+                    Rozwój i utrzymanie witryny internetowej, rozwijanie CMS'a, ścisła współpraca z biznesem w implementowaniu nowych rozwiązań, integracja systemowa, praca w metodologi AGILE. <br />
+                    
+                    <br /><br /><br />
+                    Technologie: <br />
+                    1) ASP.NET - MVC, MVVM<br />
+                    2) JS - AngularJS, KnockoutJS<br />
+                    3) MSSql - T-SQL<br />
+                    4) GitHub, Jira, SCRUM <br />
+                </p>
+            </div>
+        </div>
+        <div class="col span-1-of-3">
+            <div class="experience-box">
+                <h3>GetinLeasing S.A</h3>
+                <h4>Junior developer</h4><br />
+                <h5>09-2016 - 09-2017</h5>
+                <p>
+                    Utrzymanie i rozwijanie aplikacji windykacyjnej tworzenie struktur bazodanowych, realizacja oraz nadzorowanie wdrożeń, przeprowadzanie migracji systemowych, integracja systemowa.<br /><br />
+                    <br />
+                    Technologie: <br />
+                    1) C# - Winforms, WPF, LINQ, EF<br />
+                    2) MsSql, T-SQL<br />
+                    3) SAP RFC <br />
+                    4) Git-tortoise, Redmine<br />
+                </p>
+            </div>
+        </div>
+        <div class="col span-1-of-3">
+            <div class="experience-box">
+                <h3>Getinbank</h3>
+                <h4>Tester automatyczny</h4><br />
+                <h5>09-2015 - 09-2016</h5>
+                <p>
+                    Automatyzacji testów głównej aplikacji kredytowej, weryfikowanie wymagań biznesowych oraz systemowych, tworzenie przypadków testowych, tworzenie procedur bazodanowych. <br/><br/>
+                    
+                    <br />
+                    Technologie: <br/>
+                    1) C# - LINQ, EF<br />
+                    2) MsSql, T-SQL<br />
+                    3) Selenium WebDriver<br />
+                    4) Nunit, WebAutomation<br />
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact">
+    <div class="row">
+        <h2>Kontakt</h2>
+    </div>
+    <div class="row">
+        <h4>Potrzebujesz strony lub chcesz pracować razem?</h4>
+    </div>
+    <form class="form-horizontal contact-from js--section-contact" action="@Url.Action("ResumeOffer", "Home")" method="post" enctype="multipart/form-data">
+        <div class="contact-form-fields">
+            <div class="row">
+                <div class="col span-1-of-3">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col span-2-of-3">
+                    <input asp-for="Name" class="form-control txtBox"/>
+                    <span asp-validation-for="Name" class="text-danger txtBox"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col span-2-of-3">
+                    <input asp-for="Email" class="form-control txtBox" />
+                    <span asp-validation-for="Email" class="text-danger txtBox"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col span-2-of-3">
+                    <input asp-for="PhoneNumber" class="form-control txtBox" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger txtBox"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>Załącznik</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="file" name="file" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col span-2-of-3">
+                    @Html.TextAreaFor(m => m.Comment, 10, 40, new { @class = "form-control txtBox" })
+                    <span asp-validation-for="Comment" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="submit" class="btn btn-primary" value="Wyślij"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<footer>
+    <div class="row">
+        <div class="col span-1-of-2">
+            <ul class="footer-nav">
+                <li><a href="#">O mnie</a></li>
+                <li><a href="#">Technologie</a></li>
+                <li><a href="#">Doświadczenie</a></li>
+            </ul>
+        </div>
+        <div class="col span-1-of-2">
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/jac.szczurek" target="_blank"><i class="ion-social-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/jacek-go%C5%82%C4%99biowski-szczurek-381290bb/" target="_blank"><i class="ion-social-linkedin"></i></a></li>
+                <li><a href="#"><i class="ion-social-github"></i></a></li>
+                <li><a href="mailto:jac.szczurek@gmail.com?Subject=Kontakt%20ze%20strony" target="_top"><i class="ion-ios-email"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <p>
+            Copytight &copy; 2017 by Jacek Szczurek.
+        </p>
+    </div>
+</footer>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script> <!--- SKRYPT DO RWD DOBRA STRONKA SPRAWDZ JA -->
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script> <!--- SKRYPT DO STARSZEGO HTMLA -->
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script> <!--- SKRYPT DO Slast:child html5 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--- JQUERY -->
+    <script src="/js/script.js"></script> <!--- js/scripts -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/vendors/js/jquery.waypoints.min.js"></script> <!-- PLUGIN DO PRZEWIJANIA KOZAK! -->
+    <link href="~/vendors/css/toastr.css" rel="stylesheet" />
+    <script src="~/vendors/js/toastr.js"></script>
+</body>
+</html>

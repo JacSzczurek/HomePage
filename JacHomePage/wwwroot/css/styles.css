@@ -1,0 +1,429 @@
+/* #3498db - peter river
+
+
+
+/* ---------------------------------------------------------------------------------------  */
+/* BASIC SETUP */
+/* ---------------------------------------------------------------------------------------  */
+
+* {
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #000000;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    /*overflow-x: hidden;*/
+}
+
+.clearfix {zoom: 1; }
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: break;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ---------------------------------------------------------------------------------------  */
+/* REUSABLE COMPONENTS */
+/* ---------------------------------------------------------------------------------------  */
+
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;   /*top-bottom 0 left-right auto*/  
+}
+
+section {
+    padding: 40px 0;
+}
+
+.circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    font-size: 140%;
+    line-height: 180px;
+    color: #fff;
+    text-align: center;
+    background: #3498db;
+    margin: 0px auto;
+}
+
+/* ----- HEADINGS ----- */
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    margin-bottom: 20px;
+    word-spacing: 2px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 300%;
+    color: #fff;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2, h3, h4, h5 {    
+    
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+}
+
+h3 {
+    font-size: 150%;
+}
+
+h4 {
+    font-size: 110%;
+    font-weight: normal;
+}
+
+h5 {
+    font-size: 90%;
+    text-transform: none;
+}
+
+/* ------ICON COLOR -------- */
+.icon-color {
+    content: "\2605";
+    position: absolute;
+    color: #f2b01e;
+}
+
+/* ----- BUTTONS ----- */
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    display: inline-block; /* ma margin i paddingg ale nie forsuje line break */
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #3498db;
+    border: 1px solid #3498db;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #3498db;
+    color: #3498db;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #3498db;
+    background-color: #3498db;  
+    color: #fff;
+}
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #2a75a7;
+    background-color: #2a75a7;
+}
+
+/* ----------- RATING STARS ------------*/
+.rating {
+    margin: 0 auto;
+}
+.rating span {
+    text-align: center;
+}
+
+.full-star:before {
+  content: "\2605";
+  overflow: hidden;
+    color: #f2b01e;
+}
+.empty-star:before {
+  content: "\2605";
+}
+
+.rating-star{
+    font-size: 90%;
+    padding: 0;
+}
+
+/* ---------------------------------------------------------------------------------------  */
+/* HEADER */
+/* ---------------------------------------------------------------------------------------  */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(/images/background-1-min.jpeg);
+    background-size: cover;
+    background-attachment: fixed; /** UZYWAC MOCNO IMG ZOSTAJE PRZYCZEPIONY DO PRZEGLĄDARKI */
+    background-position: center;
+    height: 100vh;
+}
+
+.top-about-me {
+    position: absolute;
+    width: 1140px;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%); /* translate half of the widht and height to the left*/
+}
+
+.top-about-me p {
+    margin-top: 30px;
+    color: #fff;
+}
+
+.top-about-me a {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+/* ---------------------------------------------------------------------------------------  */
+/* MENU TOP */
+/* ---------------------------------------------------------------------------------------  */
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 35px;
+    padding: 10px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #fff;
+}
+/* ---------------------STICKY NAV------------------------------------  */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+
+    -webkit-box-shadow: 0 2px 2px #efefef;
+    box-shadow: 0 2px 2px #efefef; /* 0 px X 2px Y 2px blur color */
+    z-index: 9999; /*********   ALWAYS ON THE TOP OF ELEMENTS!!!!!!!!!!!!!!!!! ***********/
+}
+
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited {
+        padding: 22px 0;
+        color: #555;
+    }
+
+    .sticky .main-nav {
+        margin-top: 2px;
+    }
+
+    .sticky .logo {
+        display: none;
+    }
+
+    .sticky .logo-black {
+        display: block;
+    }
+
+
+
+
+/* ---------------------------------------------------------------------------------------  */
+/* MAIN-ABOUT-ME */
+/* ---------------------------------------------------------------------------------------  */
+
+.section-main-about-me {
+    padding: 120px 0;
+    background-color: #f4f4f4;
+}
+
+.section-main-about-me p {
+    margin-top: 80px;
+}
+
+.about-me-time {
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------------------------------------  */
+/* TECHNOLOGY */
+/* ---------------------------------------------------------------------------------------  */
+
+
+
+.technology-photo-list {
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    overflow: hidden;                 /* transform: scale(1.15) zwieksza obrazek na 115% - przez co width tych obrazkow wyjezdza po za szerokosc przeglądarki overflow:hidden docina do szerokosci */
+    margin: 60px 0;
+}
+.technology-photo-list li{
+    display: inline-block;
+    padding: 35px;
+    text-align: center;
+}
+
+.technology-photo-list li img {
+    width: 180px;
+    height: auto;
+}
+
+/* ---------------------------------------------------------------------------------------  */
+/* EXPERIENCE */
+/* ---------------------------------------------------------------------------------------  */
+.section-experience {
+    background-color: #f4f4f4;
+    padding-bottom: 120px;
+}
+.section-experience h2 {
+    background-color: #f4f4f4;
+    margin-bottom: 100px;
+}
+
+.experience-box {
+    background-color: #fff;
+    padding: 20px;
+    width: 90%;
+    border-radius: 25px;
+    border: 2px solid #fff;
+}
+
+.experience-box p {
+    margin-top: 50px;
+}
+
+
+/*----------CONTACT FORM---------*/
+.contact-from {
+    width: 60%;
+    margin: 20px auto;
+}
+.form-contact {
+    display : block;
+    text-align: center;
+    margin: 0;
+}
+.contact-form-fields {
+    margin: 30px auto;
+}
+.txtBox {
+    width: 100%;
+}
+
+/* ---------------------------------------------------------------------------------------  */
+/* FOOTER */
+/* ---------------------------------------------------------------------------------------  */
+
+footer {
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+    .footer-nav li,
+    .social-links li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+        .footer-nav li:last-child,
+        .social-links li:last-child {
+            margin-right: 0;
+        }
+
+        .footer-nav li a:link,
+        .footer-nav li a:visited,
+        .social-links li a:link,
+        .social-links li a:visited {
+            text-decoration: none;
+            border: 0;
+            color: #888;
+            -webkit-transition: color 0.2s;
+            transition: color 0.2s;
+        }
+
+        .social-links li a:hover,
+        .social-links li a:active,
+        .footer-nav li a:hover,
+        .footer-nav li a:active {
+            color: #ddd;
+        }
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s
+}
+
+    .ion-social-facebook:hover {
+        color: #3b5998;
+    }
+
+    .ion-social-linkedin:hover {
+        color: #4875B4;
+    }
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
+
+footer p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
