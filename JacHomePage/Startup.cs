@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
-using JacHomePage.Authorization;
 using JacHomePage.Settings;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -47,8 +46,81 @@ namespace JacHomePage
             });
             services.AddScoped<IJackRepository, JackRepository>();
 
+            //// 1. Add Authentication Services
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+            //}).AddJwtBearer(options =>
+            //{
+            //    options.Authority = "https://jacszczurekhome.eu.auth0.com/";
+            //    options.Audience = "https://api.home.com";
+            //});
+
+            #region Authentication
+
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+            })
+                .AddCookie()
+                .AddOpenIdConnect("Auth0", options => {
+                        // Set the authority to your Auth0 domain
+                        options.Authority = $"https://{Configuration["Auth0:Domain"]}";
+
+                        // Configure the Auth0 Client ID and Client Secret
+                        options.ClientId = Configuration["Auth0:ClientId"];
+                    options.ClientSecret = Configuration["Auth0:ClientSecret"];
+
+                        // Set response type to code
+                        options.ResponseType = "code";
+
+                        // Configure the scope
+                        options.Scope.Clear();
+                    options.Scope.Add("openid");
+
+                        // Set the callback path, so Auth0 will call back to http://localhost:5000/signin-auth0 
+                        // Also ensure that you have added the URL as an Allowed Callback URL in your Auth0 dashboard 
+                        options.CallbackPath = new PathString("/signin-auth0");
+
+                        // Configure the Claims Issuer to be Auth0
+                        options.ClaimsIssuer = "Auth0";
+                    options.Events = new OpenIdConnectEvents
+                    {
+                            // handle the logout redirection 
+                            OnRedirectToIdentityProviderForSignOut = (context) =>
+                        {
+                            var logoutUri =
+                                $"https://{Configuration["Auth0:Domain"]}/v2/logout?client_id={Configuration["Auth0:ClientId"]}";
+                            var postLogoutUri = context.Properties.RedirectUri;
+                            if (!string.IsNullOrEmpty(postLogoutUri))
+                            {
+                                if (postLogoutUri.StartsWith("/"))
+                                {
+                                        // transform to absolute
+                                        var request = context.Request;
+                                    postLogoutUri = request.Scheme + "://" + request.Host + request.PathBase +
+                                                    postLogoutUri;
+                                }
+
+                                logoutUri += $"&returnTo={Uri.EscapeDataString(postLogoutUri)}";
+                            }
+
+                            context.Response.Redirect(logoutUri);
+                            context.HandleResponse();
+                            return Task.CompletedTask;
+                        }
+                    };
+                });
+
+            #endregion
+
+
             services.AddMvc();
-           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +138,7 @@ namespace JacHomePage
 
             app.UseStaticFiles();
 
+            // 2. Enable authentication middleware
             app.UseAuthentication();
 
             app.UseMvc(routes =>

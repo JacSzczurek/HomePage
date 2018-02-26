@@ -91,7 +91,7 @@ namespace JacHomePage.Controllers
             _toastNotification.AddSuccessToastMessage("Dziękuje za przesłanie wiadomości!", "Sukces", null);
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         [HttpGet("/api/contacts")]
         public async Task<List<ContactResource>> GetContacts()
         {
